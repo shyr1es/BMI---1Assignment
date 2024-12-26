@@ -11,6 +11,13 @@ app.get("/bmicalculator", function (req, res) {
 	res.sendFile(__dirname + "/" + "index.html");
 });
 
+app.get('/user/:id', (req, res) => {
+    const userId = req.params.id;
+    res.send(`Hello user with id ${userId}`);
+})
+ 
+ 
+
 //this is used to post the data on the specific route
 app.post("/bmicalculator", function (req, res) {
 	heigh = parseFloat(req.body.Height);
